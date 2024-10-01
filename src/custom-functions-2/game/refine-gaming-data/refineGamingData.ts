@@ -1,5 +1,6 @@
 import saveGamingData from "../../../custom-functions/file-system/saveGamingData.js";
 import getGamingData from "../get-gaming-data/getGamingData.js";
+import { giveDataAfterMovingToNextQuestion } from "../give-data-after-moving-to-next-question/giveDataAfterMovingToNextQuestion.js";
 import makeCountDown from "./make-countdown/makeCountDown.js";
 import moveToNextQuestion from "./move-to-next-question/moveToNextQuestion.js";
 import removeRoomWithoutUsers from "./remove-room-without-users/removeRoomWithoutUsers.js";
@@ -18,7 +19,12 @@ const refineGamingData = async () => {
     // const dataAfterMovingToNextQuestion = moveToNextQuestion(
     //   dataAfterMakingCountdown
     // );
-    await saveGamingData(dataAfterRemovingRoomWithoutUsers);
+    const dataAfterMovingToNextQuestion: any =
+      await giveDataAfterMovingToNextQuestion(
+        dataAfterRemovingRoomWithoutUsers
+      );
+
+    await saveGamingData(dataAfterMovingToNextQuestion);
   } catch (error) {
     console.log(error);
   }

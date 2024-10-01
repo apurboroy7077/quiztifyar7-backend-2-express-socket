@@ -8,7 +8,7 @@ const removeUnactivePlayer = (gameData: any) => {
       const currentTimeStamp = Date.now();
       const passedTimeStamp = currentTimeStamp - lastRequestTimeStamp;
       const differenceInSeconds = Math.floor(passedTimeStamp / 1000);
-      if (differenceInSeconds < 20) {
+      if (differenceInSeconds < 60) {
         processedUsersData.push(singleUserData);
       }
     }
