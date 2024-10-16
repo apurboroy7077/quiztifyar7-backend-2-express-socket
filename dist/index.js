@@ -7,5 +7,6 @@ myExpressServer.listen(EXPRESS_SERVER_PORT, () => {
         refineGamingData();
     }, 1000);
 });
-export default myExpressServer;
+const server = myExpressServer;
+export default server;
 //# sourceMappingURL=index.js.map

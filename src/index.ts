@@ -11,4 +11,5 @@ myExpressServer.listen(EXPRESS_SERVER_PORT, () => {
   }, 1000);
 });
 
-export default myExpressServer;
+const server = myExpressServer;
+export default server;
